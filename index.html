@@ -105,7 +105,7 @@
             justify-content: center;
             gap: 16px;
             margin-top: 20px;
-            flex-wrap: nowrap; 
+            flex-wrap: wrap; /* Zmieniono na wrap dla lepszej responsywności */
         }
 
         .link-button {
@@ -156,6 +156,7 @@
 
         .social-icons .link-button {
             padding: 10px;
+            flex-grow: 1; /* Nowa reguła, aby przyciski mogły rosnąć */
         }
 
         .social-icons .link-icon {
@@ -265,6 +266,13 @@
 
         .link-button:hover .link-loading-bar {
             width: 100%;
+        }
+        
+        /* Nowe style dla responsywności social icons na małych ekranach */
+        @media (max-width: 600px) {
+            .social-icons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
