@@ -109,12 +109,12 @@
             margin-top: 20px;
         }
 
+        /* Styl dla wszystkich linków, które nie są socialami */
         .link-button {
             display: flex;
             align-items: center;
             justify-content: flex-start;
             padding: 15px;
-            /* Kolor tła przycisku zmieniony na rgba od #0c001f */
             background-color: rgba(12, 0, 31, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
@@ -126,19 +126,52 @@
         }
 
         .link-button:hover {
-            /* Efekty hover dostosowane do nowej palety */
             background-color: #1b0042;
             border-color: #4c0099;
             box-shadow: 0 0 0 4px #3f0080, 0 0 25px 12px rgba(76, 0, 153, 0.7);
         }
 
-        .link-icon {
+        /* Styl dla ikon w standardowych linkach */
+        .link-button .link-icon {
             width: 48px;
             height: 48px;
             margin-right: 15px;
             border-radius: 8px;
             overflow: hidden;
             flex-shrink: 0;
+        }
+
+        /* Styl dla tekstu w standardowych linkach */
+        .link-button .link-title {
+            font-weight: 700;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .link-button .link-subtitle {
+            font-weight: 400;
+            font-size: 12px;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* NOWY STYL DLA PRZYCISKÓW SOCIAL MEDIA */
+        .social-icons .link-button {
+            padding: 10px;
+        }
+
+        .social-icons .link-icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+
+        .social-icons .link-title {
+            font-size: 14px;
+        }
+
+        .social-icons .link-subtitle {
+            font-size: 10px;
         }
 
         .link-icon img {
@@ -150,19 +183,6 @@
         .link-text {
             text-align: left;
             flex-grow: 1;
-        }
-
-        .link-title {
-            font-weight: 700;
-            font-size: 16px;
-            margin: 0;
-        }
-
-        .link-subtitle {
-            font-weight: 400;
-            font-size: 12px;
-            opacity: 0.8;
-            margin: 0;
         }
 
         .links-container {
