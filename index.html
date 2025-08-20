@@ -105,7 +105,7 @@
             justify-content: center;
             gap: 16px;
             margin-top: 20px;
-            flex-wrap: wrap; /* Zmieniono na wrap dla lepszej responsywności */
+            flex-wrap: wrap;
         }
 
         .link-button {
@@ -121,8 +121,8 @@
             transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
-            flex-shrink: 0; 
-            min-width: 120px; 
+            flex-shrink: 0;
+            min-width: 120px;
         }
 
         .link-button:hover {
@@ -131,46 +131,13 @@
             box-shadow: 0 0 0 4px #3f0080, 0 0 25px 12px rgba(76, 0, 153, 0.7);
         }
 
-        .link-button .link-icon {
-            width: 48px;
-            height: 48px;
+        .link-icon {
+            width: 32px;
+            height: 32px;
             margin-right: 15px;
             border-radius: 8px;
             overflow: hidden;
             flex-shrink: 0;
-        }
-
-        .link-button .link-title {
-            font-weight: 700;
-            font-size: 16px;
-            margin: 0;
-        }
-
-        .link-button .link-subtitle {
-            font-weight: 400;
-            font-size: 12px;
-            opacity: 0.8;
-            margin: 0;
-            color: #E0B0FF;
-        }
-
-        .social-icons .link-button {
-            padding: 10px;
-            flex-grow: 1; /* Nowa reguła, aby przyciski mogły rosnąć */
-        }
-
-        .social-icons .link-icon {
-            width: 32px;
-            height: 32px;
-            margin-right: 10px;
-        }
-
-        .social-icons .link-title {
-            font-size: 14px;
-        }
-
-        .social-icons .link-subtitle {
-            font-size: 10px;
         }
 
         .link-icon img {
@@ -182,6 +149,20 @@
         .link-text {
             text-align: left;
             flex-grow: 1;
+        }
+
+        .link-title {
+            font-weight: 700;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .link-subtitle {
+            font-weight: 400;
+            font-size: 12px;
+            opacity: 0.8;
+            margin: 0;
+            color: #E0B0FF;
         }
 
         .links-container {
@@ -268,7 +249,6 @@
             width: 100%;
         }
         
-        /* Nowe style dla responsywności social icons na małych ekranach */
         @media (max-width: 600px) {
             .social-icons {
                 flex-direction: column;
@@ -285,7 +265,6 @@
                 <img src="images/meesyka.png" alt="meesyka Avatar" class="avatar-image">
             </div>
             <h1 class="profile-name">Meesyka_</h1>
-            <!-- Zaktualizowano element dla kontaktu, aby zawierał obrazek -->
             <p class="profile-contact">
                 <span class="contact-text">Kontakt: Meesyka@stormmedia.gg</span>
                 <img src="images/frog.png" alt="Biznesowy avatar" class="contact-icon">
@@ -378,8 +357,8 @@
                 </div>
                 <div class="link-loading-bar"></div>
             </a>
-            <a href="https://www.hp.com/pl-pl/shop/search/products/cloud%20iii%20s%20wireless" target="_blank" class="link-button">
-                <!-- Bezpośrednio wklejony kod SVG -->
+            <a href="https://www.hp.com/pl-pl/shop/search/products/cloud%20iii%20s%20wireless" target="_blank"
+                class="link-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="holy-icon">
@@ -397,7 +376,6 @@
                 <div class="link-loading-bar"></div>
             </a>
             <a href="https://discord.com/invite/FGEzSW6u23" target="_blank" class="link-button">
-                <!-- Ikona strzałki dodana tutaj -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="holy-icon">
@@ -415,7 +393,6 @@
                 <div class="link-loading-bar"></div>
             </a>
             <a href="https://tipply.pl/@meesyka" target="_blank" class="link-button">
-                <!-- Ikona strzałki dodana tutaj -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="holy-icon">
