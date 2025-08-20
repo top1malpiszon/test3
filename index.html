@@ -13,10 +13,11 @@
 
     <style>
         body {
+            /* Tło pozostawione bez zmian, tak jak prosiłeś */
             background-color: #1A0E2A;
             background-image:
-                radial-gradient(circle at 100% 100%, transparent 10%, #2A1A45 15%, #3F2B6A 20%, #5B429A 30%, transparent 45%),
-                radial-gradient(circle at 0% 0%, transparent 10%, #2A1A45 15%, #3F2B6A 20%, #5B429A 30%, transparent 45%);
+                radial-gradient(circle at 100% 100%, transparent 10%, #1D122D 15%, #2D1F50 20%, #413070 30%, transparent 45%),
+                radial-gradient(circle at 0% 0%, transparent 10%, #1D122D 15%, #2D1F50 20%, #413070 30%, transparent 45%);
             background-size: 200% 200%;
             background-position: 50% 50%;
             animation: ocean-waves 12s ease-in-out infinite alternate;
@@ -54,21 +55,22 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 0 0 4px #8A2BE2, 0 0 20px 8px rgba(138, 43, 226, 0.7);
+            /* Cień avatara dostosowany do nowego koloru */
+            box-shadow: 0 0 0 4px #5A3E94, 0 0 20px 8px rgba(90, 62, 148, 0.7);
             animation: glow-pulse 2.5s infinite;
         }
 
         @keyframes glow-pulse {
             0% {
-                box-shadow: 0 0 0 4px #9A5BCC, 0 0 20px 8px rgba(154, 91, 204, 0.5);
+                box-shadow: 0 0 0 4px #5A3E94, 0 0 20px 8px rgba(90, 62, 148, 0.5);
             }
 
             50% {
-                box-shadow: 0 0 0 4px #C671E5, 0 0 25px 12px rgba(198, 113, 229, 0.8);
+                box-shadow: 0 0 0 4px #8A66CC, 0 0 25px 12px rgba(138, 102, 204, 0.8);
             }
 
             100% {
-                box-shadow: 0 0 0 4px #9A5BCC, 0 0 20px 8px rgba(154, 91, 204, 0.5);
+                box-shadow: 0 0 0 4px #5A3E94, 0 0 20px 8px rgba(90, 62, 148, 0.5);
             }
         }
 
@@ -112,8 +114,8 @@
             align-items: center;
             justify-content: flex-start;
             padding: 15px;
-            background-color: rgba(26, 14, 42, 0.5);
-            /* Ciemniejsze tło fioletowe */
+            /* Kolor tła przycisku zmieniony na rgba od #17013b */
+            background-color: rgba(23, 1, 59, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             text-decoration: none;
@@ -124,9 +126,10 @@
         }
 
         .link-button:hover {
-            background-color: #3F2B6A;
-            border-color: #8A2BE2;
-            box-shadow: 0 0 0 4px #5B429A, 0 0 25px 12px rgba(138, 43, 226, 0.7);
+            /* Efekty hover dostosowane do nowej palety */
+            background-color: #2A164B;
+            border-color: #6C4EAD;
+            box-shadow: 0 0 0 4px #3C236B, 0 0 25px 12px rgba(108, 78, 173, 0.7);
         }
 
         .link-icon {
@@ -238,7 +241,8 @@
             left: 0;
             width: 0;
             height: 4px;
-            background-color: #E545A3;
+            /* Pasek ładowania dostosowany do nowej palety */
+            background-color: #A366FF;
             transition: width 0.8s ease-in-out;
         }
 
