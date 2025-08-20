@@ -163,24 +163,26 @@
       color: #E0B0FF;
     }
 
-    .social-icons .link-button {
-      padding: 10px;
+    /* Zaktualizowane style dla kafelków social media */
+    .social-row .link-button {
+      padding: 10px; /* Zmniejszono padding, aby kafelki były mniejsze */
+      min-width: unset; /* Usunięto minimalną szerokość */
     }
 
-    .social-icons .link-icon {
-      width: 32px;
+    .social-row .link-button .link-icon {
+      width: 32px; /* Zmniejszono ikonę */
       height: 32px;
-      margin-right: 10px;
+      margin-right: 10px; /* Domyślny margines z powrotem */
     }
 
-    .social-icons .link-title {
-      font-size: 14px;
+    .social-row .link-button .link-title {
+      font-size: 14px; /* Zmniejszono czcionkę tytułu */
     }
 
-    .social-icons .link-subtitle {
-      font-size: 10px;
+    .social-row .link-button .link-subtitle {
+      font-size: 10px; /* Zmniejszono czcionkę podtytułu */
     }
-
+    
     .link-icon img {
       width: 100%;
       height: 100%;
@@ -258,14 +260,21 @@
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
     }
-
-    .social-icons .holy-icon {
-      top: 15px;
-      /* Specjalna pozycja dla ikonek w sekcji social media */
+    
+    /* Nowa reguła, żeby ikonka strzałki pojawiała się na kafelkach HyperX, Discord i DONATE */
+    .link-button:hover .holy-icon {
+        opacity: 1;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
-    .link-button:hover .holy-icon {
+    /* Dopasowanie pozycji ikony strzałki dla małych kafelków */
+    .social-row .link-button:hover .holy-icon {
       opacity: 1;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .link-loading-bar {
