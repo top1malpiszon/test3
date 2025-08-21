@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meesyka_</title>
-    <!-- Ikona strony -->
     <link rel="shortcut icon" type="image/png" href="images/meesyka.png">
 
-    <!-- Czcionka Poppins z Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Styl dla całego ciała strony, w tym tło z animacją */
         body {
             background-color: #1A0E2A;
             background-image:
@@ -29,7 +26,6 @@
             padding: 0;
         }
 
-        /* Animacja tła */
         @keyframes ocean-waves {
             from {
                 background-position: 0% 0%;
@@ -40,7 +36,6 @@
             }
         }
 
-        /* Kontener na całą zawartość strony */
         .page-container {
             width: 100%;
             max-width: 600px;
@@ -50,7 +45,6 @@
             margin: 0 auto;
         }
 
-        /* Styl dla awatara profilu */
         .profile-avatar {
             margin-top: 20px;
         }
@@ -60,12 +54,10 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            /* Cień z efektem pulsowania */
             box-shadow: 0 0 0 4px #4c0099, 0 0 20px 8px rgba(76, 0, 153, 0.7);
             animation: glow-pulse 2.5s infinite;
         }
 
-        /* Animacja pulsowania cienia */
         @keyframes glow-pulse {
             0% {
                 box-shadow: 0 0 0 4px #4c0099, 0 0 20px 8px rgba(76, 0, 153, 0.5);
@@ -80,7 +72,6 @@
             }
         }
 
-        /* Styl dla nazwy profilu */
         .profile-name {
             margin-top: 10px;
             font-size: 24px;
@@ -88,7 +79,6 @@
             margin-bottom: 0;
         }
 
-        /* Styl dla sekcji kontaktowej */
         .profile-contact {
             font-size: 16px;
             font-weight: 400;
@@ -110,24 +100,21 @@
             vertical-align: middle;
         }
 
-        /* Styl dla kontenera social mediów */
         .social-icons {
             display: flex;
-            flex-direction: column; /* Układanie elementów w kolumnie (rzędach) */
-            align-items: center; /* Wyśrodkowanie rzędów */
-            gap: 16px; /* Odstęp między rzędami */
+            flex-direction: column; 
+            align-items: center; 
+            gap: 16px; 
             margin-top: 20px;
         }
 
-        /* Styl dla pojedynczego rzędu z ikonkami */
         .social-icons-row {
             display: flex;
             justify-content: center;
-            gap: 16px; /* Odstęp między ikonkami w rzędzie */
-            flex-wrap: nowrap; /* Zapobiega zawijaniu się ikon w rzędzie */
+            gap: 16px; 
+            flex-wrap: nowrap; 
         }
 
-        /* Styl dla wszystkich przycisków linków */
         .link-button {
             display: flex;
             align-items: center;
@@ -174,7 +161,6 @@
             color: #E0B0FF;
         }
 
-        /* Specyficzne style dla ikonek social mediów */
         .social-icons .link-button {
             padding: 10px;
             flex-shrink: 0;
@@ -205,7 +191,6 @@
             flex-grow: 1;
         }
 
-        /* Kontener na linki */
         .links-container {
             display: flex;
             flex-direction: column;
@@ -213,7 +198,6 @@
             margin-top: 30px;
         }
 
-        /* Style dla obrazków w tle linków (jeśli są używane) */
         .link-image-container {
             position: relative;
             border-radius: 6px;
@@ -241,7 +225,6 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
         }
 
-        /* Styl stopki */
         .footer-logo {
             margin-top: 40px;
             opacity: 0.7;
@@ -254,7 +237,6 @@
             font-weight: 700;
         }
 
-        /* Styl dla ikon ograniczenia wiekowego (18+) */
         .age-restriction-image {
             position: absolute;
             right: 5px;
@@ -264,7 +246,6 @@
             z-index: 2;
         }
 
-        /* Styl dla ikonek strzałek */
         .holy-icon {
             position: absolute;
             right: 10px;
@@ -284,7 +265,6 @@
             opacity: 1;
         }
 
-        /* Styl dla paska ładowania na hover */
         .link-loading-bar {
             position: absolute;
             bottom: 0;
@@ -306,7 +286,6 @@
     <div class="page-container">
         <header class="profile-header">
             <div class="profile-avatar">
-                <!-- Awatar z efektem pulsowania -->
                 <img src="images/meesyka.png" alt="meesyka Avatar" class="avatar-image">
             </div>
             <h1 class="profile-name">Meesyka_</h1>
@@ -314,9 +293,7 @@
                 <span class="contact-text">Kontakt: Meesyka@stormmedia.gg</span>
                 <img src="images/frog.png" alt="Biznesowy avatar" class="contact-icon">
             </p>
-            <!-- Kontener na social media, podzielony na rzędy -->
             <div class="social-icons">
-                <!-- Pierwszy rząd (maksymalnie 3 kafelki) -->
                 <div class="social-icons-row">
                     <a href="https://www.twitch.tv/meesyka_" target="_blank" class="link-button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -361,7 +338,6 @@
                         <div class="link-loading-bar"></div>
                     </a>
                 </div>
-                <!-- Drugi rząd (2 kafelki, zgodnie z prośbą) -->
                 <div class="social-icons-row">
                     <a href="https://x.com/XxWOLFIKxX" target="_blank" class="link-button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -396,29 +372,27 @@
                         </div>
                         <div class="link-loading-bar"></div>
                     </a>
+                    <a href="https://www.tiktok.com/@meesyka_?lang=pl-PL" target="_blank" class="link-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="holy-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                        <div class="link-icon">
+                            <img src="images/tiktok.png" alt="tiktok Logo">
+                        </div>
+                        <div class="link-text">
+                            <p class="link-title">Tiktok</p>
+                            <p class="link-subtitle"></p>
+                        </div>
+                        <div class="link-loading-bar"></div>
+                    </a>
                 </div>
-                <!-- Pozostały kafelek w nowej linii -->
-                <a href="https://www.tiktok.com/@meesyka_?lang=pl-PL" target="_blank" class="link-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="holy-icon">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" x2="21" y1="14" y2="3" />
-                    </svg>
-                    <div class="link-icon">
-                        <img src="images/tiktok.png" alt="tiktok Logo">
-                    </div>
-                    <div class="link-text">
-                        <p class="link-title">Tiktok</p>
-                        <p class="link-subtitle"></p>
-                    </div>
-                    <div class="link-loading-bar"></div>
-                </a>
             </div>
         </header>
 
         <main class="links-container">
-            <!-- Przyciski z linkami głównymi -->
             <a href="https://csgo-skins.com/?ref=MEESYKA" target="_blank" class="link-button">
                 <img src="images/tylko18x.png" alt="18+" class="age-restriction-image">
                 <div class="link-icon">
@@ -444,7 +418,6 @@
             </a>
             <a href="https://www.hp.com/pl-pl/shop/search/products/cloud%20iii%20s%20wireless" target="_blank"
                 class="link-button">
-                <!-- Bezpośrednio wklejony kod SVG dla ikonki -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="holy-icon">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -461,7 +434,6 @@
                 <div class="link-loading-bar"></div>
             </a>
             <a href="https://discord.com/invite/FGEzSW6u23" target="_blank" class="link-button">
-                <!-- Ikona strzałki -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="holy-icon">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -478,7 +450,6 @@
                 <div class="link-loading-bar"></div>
             </a>
             <a href="https://tipply.pl/@meesyka" target="_blank" class="link-button">
-                <!-- Ikona strzałki -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="holy-icon">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -496,7 +467,6 @@
             </a>
         </main>
 
-        <!-- STOPKA Z OSTRZEŻENIEM -->
         <footer style="margin-top:40px; font-size:11px; color:#aaa; text-align:center; line-height:1.4; opacity:0.8;">
             <strong>⚠️ GRAJ ODPOWIEDZIALNIE! ⚠️</strong><br>
             Ta strona zawiera linki do zewnętrznych serwisów.
