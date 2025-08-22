@@ -126,8 +126,8 @@
 
         .link-button:hover {
             background-color: #1b0042;
-            border-color: #d4bce3;
-            box-shadow: 0 0 0 4px #c2a7db, 0 0 25px 12px rgba(212, 188, 227, 0.7);
+            border-color: #ffb8cb;
+            box-shadow: 0 0 0 4px #ffc8dc, 0 0 25px 12px rgba(255, 184, 203, 0.7);
             transform: scale(1.02);
         }
 
@@ -230,29 +230,12 @@
             left: 0;
             width: 0;
             height: 4px;
-            background-color: #d4bce3;
+            background-color: #ffb8cb;
             transition: width 0.8s ease-in-out;
         }
 
         .link-button:hover .link-loading-bar {
             width: 100%;
-        }
-
-        /* Nowy styl dla płynnej animacji kotków */
-        .cat-image {
-            position: fixed; /* Używamy fixed, żeby koty były zawsze w widoku i nie zasłaniały głównej treści */
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            z-index: 10;
-            opacity: 0;
-            transform: scale(0.5);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-        }
-
-        .cat-image.active {
-            opacity: 1;
-            transform: scale(1);
         }
     </style>
 </head>
@@ -417,66 +400,5 @@
             i nie ponosimy odpowiedzialności za skutki korzystania z tych serwisów.
         </footer>
     </div>
-    
-    <!-- Obrazki kotków, które będą wyświetlane losowo -->
-    <img src="images/kot1.png" alt="Random cat 1" class="cat-image" id="cat1">
-    <img src="images/kot2.png" alt="Random cat 2" class="cat-image" id="cat2">
-    <img src="images/kot3.png" alt="Random cat 3" class="cat-image" id="cat3">
-    <img src="images/kot4.png" alt="Random cat 4" class="cat-image" id="cat4">
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const catImages = document.querySelectorAll('.cat-image');
-            const mainContent = document.querySelector('.page-container');
-
-            // Sprawdza, czy urządzenie jest mobilne (poniżej szerokości 768px)
-            const isMobile = window.innerWidth <= 768;
-            if (isMobile) {
-                // Jeśli to urządzenie mobilne, nie uruchamiaj animacji, aby nie zasłaniać treści.
-                return; 
-            }
-
-            function displayRandomCats() {
-                // Wybieramy dwa UNIKALNE kotki
-                const catsToShow = new Set();
-                while (catsToShow.size < 2) {
-                    const randomIndex = Math.floor(Math.random() * catImages.length);
-                    catsToShow.add(catImages[randomIndex]);
-                }
-
-                const catArray = Array.from(catsToShow);
-                const mainRect = mainContent.getBoundingClientRect();
-                
-                catArray.forEach((cat, index) => {
-                    const randomSide = Math.random() < 0.5 ? 'left' : 'right';
-                    const randomTop = Math.random() * (window.innerHeight - cat.offsetHeight);
-                    
-                    if (randomSide === 'left') {
-                        // Pozycja po lewej stronie, w przestrzeni poza kontenerem
-                        cat.style.left = `${Math.random() * (mainRect.left - cat.offsetWidth)}px`;
-                        cat.style.right = 'auto';
-                    } else {
-                        // Pozycja po prawej stronie, w przestrzeni poza kontenerem
-                        cat.style.right = `${Math.random() * (window.innerWidth - mainRect.right - cat.offsetWidth)}px`;
-                        cat.style.left = 'auto';
-                    }
-                    
-                    cat.style.top = `${randomTop}px`;
-                    cat.classList.add('active');
-
-                    const hideDelay = 3000 + Math.random() * 2000;
-                    setTimeout(() => {
-                        cat.classList.remove('active');
-                    }, hideDelay);
-                });
-
-                // Zmniejszone opóźnienie, aby kotki pojawiały się szybciej
-                const nextShowDelay = 2000 + Math.random() * 5000;
-                setTimeout(displayRandomCats, nextShowDelay);
-            }
-
-            displayRandomCats();
-        });
-    </script>
 </body>
 </html>
