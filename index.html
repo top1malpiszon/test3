@@ -13,28 +13,40 @@
 
     <style>
         body {
-            background-color: #0E021A;
+            background-color: #1A0E2A;
             color: #ffb8cb;
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             position: relative;
-            overflow-x: hidden;
-            background-image:
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23d4bce3" stop-opacity="0.15" /><stop offset="100%" stop-color="%231A0E2A" stop-opacity="0" /></radialGradient><radialGradient id="grad2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23d491ff" stop-opacity="0.2" /><stop offset="100%" stop-color="%231A0E2A" stop-opacity="0" /></radialGradient></defs><path d="M50,10 C 20,0 0,30 0,50 C 0,80 30,100 50,100 C 70,100 100,80 100,50 C 100,30 80,0 50,10" fill="url(%23grad1)" transform="translate(10, 10)"/><path d="M50,10 C 20,0 0,30 0,50 C 0,80 30,100 50,100 C 70,100 100,80 100,50 C 100,30 80,0 50,10" fill="url(%23grad2)" transform="translate(-10, -10)"/></svg>'),
-                radial-gradient(ellipse at 50% -50%, rgba(212, 145, 255, 0.2) 0%, rgba(26, 14, 42, 0) 70%);
-            background-size: 150% 150%, 100% 100%;
-            background-position: 50% 50%, 50% 50%;
-            background-repeat: no-repeat, no-repeat;
-            animation: cat-aura 15s ease-in-out infinite alternate;
         }
 
-        @keyframes cat-aura {
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Zaktualizowano tło na animowane fale oceanu w odcieniach pasujących do napisów */
+            background-color: #1f0c1a;
+            background-image: 
+                radial-gradient(ellipse at 50% -20%, rgba(80, 0, 50, 0.5) 0%, transparent 60%),
+                radial-gradient(ellipse at 10% 120%, rgba(100, 0, 80, 0.4) 0%, transparent 60%),
+                radial-gradient(ellipse at 90% 130%, rgba(120, 0, 90, 0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(60, 0, 40, 0.6) 0%, transparent 60%);
+            background-size: 250% 250%; /* Rozmiar dla płynnej animacji */
+            animation: ocean-waves 40s linear infinite alternate;
+            z-index: -1;
+            will-change: background-position;
+        }
+        
+        @keyframes ocean-waves {
             0% {
-                background-position: 50% 50%, 50% 50%;
+                background-position: 0% 0%;
             }
             100% {
-                background-position: 50% 40%, 50% 60%;
+                background-position: 100% 100%;
             }
         }
 
@@ -45,6 +57,8 @@
             box-sizing: border-box;
             text-align: center;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .profile-avatar {
