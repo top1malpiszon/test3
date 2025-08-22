@@ -13,26 +13,28 @@
 
     <style>
         body {
-            background-color: #1A0E2A;
-            background-image:
-                radial-gradient(circle at 100% 100%, transparent 10%, #1D122D 15%, #2D1F50 20%, #413070 30%, transparent 45%),
-                radial-gradient(circle at 0% 0%, transparent 10%, #1D122D 15%, #2D1F50 20%, #413070 30%, transparent 45%);
-            background-size: 200% 200%;
-            background-position: 50% 50%;
-            animation: ocean-waves 12s ease-in-out infinite alternate;
-            color: #E0B0FF;
+            background-color: #0E021A;
+            color: #ffb8cb;
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            position: relative;
+            overflow-x: hidden;
+            background-image:
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23d4bce3" stop-opacity="0.15" /><stop offset="100%" stop-color="%231A0E2A" stop-opacity="0" /></radialGradient><radialGradient id="grad2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23d491ff" stop-opacity="0.2" /><stop offset="100%" stop-color="%231A0E2A" stop-opacity="0" /></radialGradient></defs><path d="M50,10 C 20,0 0,30 0,50 C 0,80 30,100 50,100 C 70,100 100,80 100,50 C 100,30 80,0 50,10" fill="url(%23grad1)" transform="translate(10, 10)"/><path d="M50,10 C 20,0 0,30 0,50 C 0,80 30,100 50,100 C 70,100 100,80 100,50 C 100,30 80,0 50,10" fill="url(%23grad2)" transform="translate(-10, -10)"/></svg>'),
+                radial-gradient(ellipse at 50% -50%, rgba(212, 145, 255, 0.2) 0%, rgba(26, 14, 42, 0) 70%);
+            background-size: 150% 150%, 100% 100%;
+            background-position: 50% 50%, 50% 50%;
+            background-repeat: no-repeat, no-repeat;
+            animation: cat-aura 15s ease-in-out infinite alternate;
         }
 
-        @keyframes ocean-waves {
-            from {
-                background-position: 0% 0%;
+        @keyframes cat-aura {
+            0% {
+                background-position: 50% 50%, 50% 50%;
             }
-
-            to {
-                background-position: 100% 100%;
+            100% {
+                background-position: 50% 40%, 50% 60%;
             }
         }
 
@@ -54,22 +56,12 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 0 0 4px #4c0099, 0 0 20px 8px rgba(76, 0, 153, 0.7);
-            animation: glow-pulse 2.5s infinite;
+            box-shadow: 0 0 0 4px #d4bce3, 0 0 20px 8px rgba(212, 188, 227, 0.7);
+            transition: box-shadow 0.3s ease;
         }
 
-        @keyframes glow-pulse {
-            0% {
-                box-shadow: 0 0 0 4px #4c0099, 0 0 20px 8px rgba(76, 0, 153, 0.5);
-            }
-
-            50% {
-                box-shadow: 0 0 0 4px #6600cc, 0 0 25px 12px rgba(102, 0, 204, 0.8);
-            }
-
-            100% {
-                box-shadow: 0 0 0 4px #4c0099, 0 0 20px 8px rgba(76, 0, 153, 0.5);
-            }
+        .avatar-image:hover {
+            box-shadow: 0 0 0 4px #e4c8f3, 0 0 25px 12px rgba(228, 200, 243, 0.8);
         }
 
         .profile-name {
@@ -124,8 +116,8 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             text-decoration: none;
-            color: #E0B0FF;
-            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            color: #ffb8cb;
+            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
             position: relative;
             overflow: hidden;
             flex-shrink: 0;
@@ -134,8 +126,9 @@
 
         .link-button:hover {
             background-color: #1b0042;
-            border-color: #4c0099;
-            box-shadow: 0 0 0 4px #3f0080, 0 0 25px 12px rgba(76, 0, 153, 0.7);
+            border-color: #d4bce3;
+            box-shadow: 0 0 0 4px #c2a7db, 0 0 25px 12px rgba(212, 188, 227, 0.7);
+            transform: scale(1.02);
         }
 
         .link-button .link-icon {
@@ -158,7 +151,7 @@
             font-size: 12px;
             opacity: 0.8;
             margin: 0;
-            color: #E0B0FF;
+            color: #ffb8cb;
         }
 
         .social-icons .link-button {
@@ -198,45 +191,6 @@
             margin-top: 30px;
         }
 
-        .link-image-container {
-            position: relative;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        .link-image-container .link-button {
-            padding: 0;
-            display: block;
-        }
-
-        .link-image-banner {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .link-title-overlay {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: #E0B0FF;
-            font-size: 20px;
-            font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-        }
-
-        .footer-logo {
-            margin-top: 40px;
-            opacity: 0.7;
-            font-size: 14px;
-        }
-
-        .footer-logo a {
-            color: #E0B0FF;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
         .age-restriction-image {
             position: absolute;
             right: 5px;
@@ -246,22 +200,27 @@
             z-index: 2;
         }
 
-        .holy-icon {
+        .new-tab-icon {
             position: absolute;
-            right: 10px;
-            top: 30px;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 20px;
             height: 20px;
-            z-index: 2;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
             opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.3s ease;
         }
-
-        .social-icons .holy-icon {
+        
+        .social-icons .new-tab-icon {
             top: 15px;
         }
 
-        .link-button:hover .holy-icon {
+        .link-button:hover .new-tab-icon {
             opacity: 1;
         }
 
@@ -271,18 +230,34 @@
             left: 0;
             width: 0;
             height: 4px;
-            background-color: #9933ff;
+            background-color: #d4bce3;
             transition: width 0.8s ease-in-out;
         }
 
         .link-button:hover .link-loading-bar {
             width: 100%;
         }
+
+        /* Nowy styl dla płynnej animacji kotków */
+        .cat-image {
+            position: fixed; /* Używamy fixed, żeby koty były zawsze w widoku i nie zasłaniały głównej treści */
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            z-index: 10;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .cat-image.active {
+            opacity: 1;
+            transform: scale(1);
+        }
     </style>
 </head>
 
 <body>
-
     <div class="page-container">
         <header class="profile-header">
             <div class="profile-avatar">
@@ -296,13 +271,6 @@
             <div class="social-icons">
                 <div class="social-icons-row">
                     <a href="https://www.twitch.tv/meesyka_" target="_blank" class="link-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="holy-icon">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" x2="21" y1="14" y2="3" />
-                        </svg>
                         <div class="link-icon">
                             <img src="images/twitch4.png" alt="Twitch Logo">
                         </div>
@@ -323,13 +291,6 @@
                         <div class="link-loading-bar"></div>
                     </a>
                     <a href="https://kick.com/meesyka" target="_blank" class="link-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="holy-icon">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" x2="21" y1="14" y2="3" />
-                        </svg>
                         <div class="link-icon">
                             <img src="images/kick.png" alt="Kick Logo">
                         </div>
@@ -342,13 +303,6 @@
                 </div>
                 <div class="social-icons-row">
                     <a href="https://x.com/XxWOLFIKxX" target="_blank" class="link-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="holy-icon">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" x2="21" y1="14" y2="3" />
-                        </svg>
                         <div class="link-icon">
                             <img src="images/twitter.png" alt="twitter Logo">
                         </div>
@@ -360,15 +314,8 @@
                     </a>
                     <a href="https://open.spotify.com/user/q657kmoz7bxjx6br4vev9vlbf?si=3f75c25c97e4484b&nd=1&dlsi=3e6307bc902d4508"
                         target="_blank" class="link-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="holy-icon">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" x2="21" y1="14" y2="3" />
-                        </svg>
                         <div class="link-icon">
-                            <img src="images/spotify.png" alt="spotify Logo">
+                            <img src="images/spotify3.png" alt="spotify Logo">
                         </div>
                         <div class="link-text">
                             <p class="link-title">Spotify</p>
@@ -377,13 +324,6 @@
                         <div class="link-loading-bar"></div>
                     </a>
                     <a href="https://www.tiktok.com/@meesyka_?lang=pl-PL" target="_blank" class="link-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="holy-icon">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <polyline points="15 3 21 3 21 9" />
-                            <line x1="10" x2="21" y1="14" y2="3" />
-                        </svg>
                         <div class="link-icon">
                             <img src="images/tiktok.png" alt="tiktok Logo">
                         </div>
@@ -423,9 +363,7 @@
             </a>
             <a href="https://www.hp.com/pl-pl/shop/search/products/cloud%20iii%20s%20wireless" target="_blank"
                 class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="new-tab-icon" viewBox="0 0 24 24">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" x2="21" y1="14" y2="3" />
@@ -440,9 +378,7 @@
                 <div class="link-loading-bar"></div>
             </a>
             <a href="https://discord.com/invite/FGEzSW6u23" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="new-tab-icon" viewBox="0 0 24 24">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" x2="21" y1="14" y2="3" />
@@ -457,9 +393,7 @@
                 <div class="link-loading-bar"></div>
             </a>
             <a href="https://tipply.pl/@meesyka" target="_blank" class="link-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="holy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="new-tab-icon" viewBox="0 0 24 24">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" x2="21" y1="14" y2="3" />
@@ -483,6 +417,66 @@
             i nie ponosimy odpowiedzialności za skutki korzystania z tych serwisów.
         </footer>
     </div>
-</body>
+    
+    <!-- Obrazki kotków, które będą wyświetlane losowo -->
+    <img src="images/kot1.png" alt="Random cat 1" class="cat-image" id="cat1">
+    <img src="images/kot2.png" alt="Random cat 2" class="cat-image" id="cat2">
+    <img src="images/kot3.png" alt="Random cat 3" class="cat-image" id="cat3">
+    <img src="images/kot4.png" alt="Random cat 4" class="cat-image" id="cat4">
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const catImages = document.querySelectorAll('.cat-image');
+            const mainContent = document.querySelector('.page-container');
+
+            // Sprawdza, czy urządzenie jest mobilne (poniżej szerokości 768px)
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile) {
+                // Jeśli to urządzenie mobilne, nie uruchamiaj animacji, aby nie zasłaniać treści.
+                return; 
+            }
+
+            function displayRandomCats() {
+                // Wybieramy dwa UNIKALNE kotki
+                const catsToShow = new Set();
+                while (catsToShow.size < 2) {
+                    const randomIndex = Math.floor(Math.random() * catImages.length);
+                    catsToShow.add(catImages[randomIndex]);
+                }
+
+                const catArray = Array.from(catsToShow);
+                const mainRect = mainContent.getBoundingClientRect();
+                
+                catArray.forEach((cat, index) => {
+                    const randomSide = Math.random() < 0.5 ? 'left' : 'right';
+                    const randomTop = Math.random() * (window.innerHeight - cat.offsetHeight);
+                    
+                    if (randomSide === 'left') {
+                        // Pozycja po lewej stronie, w przestrzeni poza kontenerem
+                        cat.style.left = `${Math.random() * (mainRect.left - cat.offsetWidth)}px`;
+                        cat.style.right = 'auto';
+                    } else {
+                        // Pozycja po prawej stronie, w przestrzeni poza kontenerem
+                        cat.style.right = `${Math.random() * (window.innerWidth - mainRect.right - cat.offsetWidth)}px`;
+                        cat.style.left = 'auto';
+                    }
+                    
+                    cat.style.top = `${randomTop}px`;
+                    cat.classList.add('active');
+
+                    const hideDelay = 3000 + Math.random() * 2000;
+                    setTimeout(() => {
+                        cat.classList.remove('active');
+                    }, hideDelay);
+                });
+
+                // Zmniejszone opóźnienie, aby kotki pojawiały się szybciej
+                const nextShowDelay = 2000 + Math.random() * 5000;
+                setTimeout(displayRandomCats, nextShowDelay);
+            }
+
+            displayRandomCats();
+        });
+    </script>
+</body>
 </html>
